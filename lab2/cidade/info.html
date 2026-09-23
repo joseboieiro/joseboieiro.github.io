@@ -3,7 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Info</title>
+    <style>
+      th {
+        color: #1a365d; /* Azul escuro para os cabeçalhos */
+        background-color: #edf2f7;
+        padding: 8px;
+      }
+      td {
+        color: #2d3748; /* Cinzento escuro para o texto */
+        padding: 8px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #cbd5e0;
+        border-collapse: collapse;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Informações</title>
   </head>
   <body>
     <header>
@@ -16,10 +34,77 @@
       </nav>
     </header>
     <main>
-      <h2>Info</h2>
+      <h2>Informações</h2>
+      <p>
+        Consulte abaixo os principais dados geográficos e demográficos relativos
+        à cidade de Alverca do Ribatejo, bem como algumas curiosidades
+        históricas sobre a região.
+      </p>
+
+      <table>
+        <tr>
+          <td rowspan="2">Demografia</td>
+          <th>População</th>
+          <td>36.465 hab.</td>
+        </tr>
+        <tr>
+          <th>Densidade Populacional</th>
+          <td>1.524,5 hab/km²</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Geografia</td>
+          <th>Área</th>
+          <td>23,92 km²</td>
+        </tr>
+        <tr>
+          <th>Região / País</th>
+          <td colspan="1">Lisboa / Portugal</td>
+        </tr>
+        <tr>
+          <td>Website</td>
+          <td colspan="2">
+            <a href="https://www.cm-vfxira.pt" target="_blank"
+              >www.cm-vfxira.pt</a
+            >
+          </td>
+        </tr>
+      </table>
+
+      <h3>5 Curiosidades sobre Alverca do Ribatejo</h3>
+      <ul>
+        <li>
+          <strong>Berço da Aviação em Portugal:</strong> Alverca tem uma
+          profunda ligação à aeronáutica, tendo acolhido desde 1918 o Parque de
+          Material Aeronáutico e, posteriormente, as OGMA (Oficinas Gerais de
+          Material Aeronáutico).
+        </li>
+        <li>
+          <strong>Primeiro Aeroporto Internacional de Lisboa:</strong> Antes da
+          existência do Aeroporto da Portela, o campo de aviação de Alverca
+          serviu como o principal aeroporto da região de Lisboa durante as
+          décadas de 1930 e 1940.
+        </li>
+        <li>
+          <strong>Museu do Ar:</strong> A cidade acolheu durante décadas uma das
+          principais sedes do Museu do Ar, preservando um vasto acervo de
+          aeronaves, motores e documentos históricos da aviação civil e militar.
+        </li>
+        <li>
+          <strong>Localização Privilegiada no Tejo:</strong> Fica situada na
+          margem direita do rio Tejo, contando com a Reserva Natural do Estuário
+          do Tejo no seu limite, uma das zonas húmidas mais importantes da
+          Europa para aves migratórias.
+        </li>
+        <li>
+          <strong>Futebol no Escalão Principal:</strong> O clube local, o
+          Futebol Clube de Alverca (FC Alverca), já competiu na Primeira Liga do
+          futebol português e é conhecido por ter formado vários jogadores de
+          renome internacional.
+        </li>
+      </ul>
     </main>
     <footer>
-      <p>DIW 2026</p>
+      <p>Portugal 2026</p>
     </footer>
   </body>
 </html>

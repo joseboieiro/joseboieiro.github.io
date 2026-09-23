@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .fotografias {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .fotografias img {
+        width: 150px;
+        border-radius: 20px;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -17,33 +30,76 @@
     </header>
     <main>
       <h2>Multimedia</h2>
-
+      <p>
+        <a href="#fotografias">Fotografias</a>
+        <a href="#video">Vídeo</a>
+        <a href="#poema">Poema</a>
+      </p>
       <p>Nesta página encontra conteúdos multimédia.</p>
 
       <section>
-        <h3>Fotografias</h3>
+        <h3 id="fotografias">Fotografias</h3>
 
         <div class="fotografias">
-          <img src="images/1x1.jpeg" alt="vista cidade" />
+          <img src="images/jardim.jpeg" alt="jardim" />
 
-          <img src="images/1x2.jpeg" alt="eletrico" />
+          <img
+            src="images/Igreja_Matriz_de_S_o_Pedro_1_2500_2500.jpg"
+            alt="Igreja S Pedro"
+          />
 
-          <img src="images/1x3.jpeg" alt="rua Augusta" />
+          <img
+            src="images/igreja_dos_pastorinhos.jpeg"
+            alt="Igreja Pastorinhos"
+          />
 
-          <img src="images/1x4.jpeg" alt="Castelo" />
+          <img src="images/aviao.jpg" alt="aviao" />
 
-          <img src="images/1x5.jpeg" alt="Tejo" />
+          <img src="images/estacao.jpg" alt="estacao" />
 
-          <img src="images/1x6.jpeg" alt="Praça Comércio" />
+          <img src="images/mercado.jpg" alt="mercado" />
 
-          <img src="images/1x7.jpeg" alt="Baixa" />
+          <img src="images/estadio.jpg" alt="estadio" />
 
-          <img src="images/1x8.jpeg" alt="Santos Populares" />
+          <img src="images/25_abril.jpg" alt="25 abril" />
+        </div>
+      </section>
+      <section>
+        <h3 id="video">Vídeo</h3>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/-hkGx5ug3bU?si=tKHt0dUEbi4LdQp1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <section>
+        <h3 id="poema">Poesia</h3>
+
+        <div class="poema-alverca">
+          <p>Às margens do Tejo, onde o rio se espalha,</p>
+          <p>Guarda Alverca a memória do vento e do ar,</p>
+          <p>Onde a asa de ferro na névoa trabalha,</p>
+          <p>E o horizonte convida a voar.</p>
+          <p>Ponte entre o rio e a faina do chão,</p>
+          <p>História escrita nas asas da aviação.</p>
         </div>
       </section>
     </main>
     <footer>
-      <p>DIW 2026</p>
+      <p>Portugal 2026</p>
     </footer>
   </body>
 </html>
