@@ -72,4 +72,49 @@ h1 {
   .hamburguer {
     display: block;
   }
+  .localmain{
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
+.fotografias {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+.fotografias img {
+  width: 150px;
+  border-radius: 20px;
+  transition: width 2s;
+}
+.fotografias img:hover {
+  width: 300px;
+}
+.localmain{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 600px) {
+  .localmain{
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+th {
+        color: #1a365d; /* Azul escuro para os cabeçalhos */
+        background-color: #edf2f7;
+        padding: 8px;
+      }
+      td {
+        color: #2d3748; /* Cinzento escuro para o texto */
+        padding: 8px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #cbd5e0;
+        border-collapse: collapse;
+      }
