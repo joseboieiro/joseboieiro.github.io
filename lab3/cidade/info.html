@@ -11,21 +11,29 @@
     <header>
       <h1>Alverca</h1>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="local.html">Localização</a>
-        <a href="multimidia.html">Multimédia</a>
-        <a href="info.html">Informação</a>
+        <a href="index.html"><span class="icone">🏠</span> Home</a>
+        <a href="local.html"><span class="icone">📍</span> Localização</a>
+        <a href="multimidia.html"><span class="icone">🎬</span> Multimédia</a>
+        <a href="info.html" class="ativo"><span class="icone">📋</span> Informação</a>
       </nav>
     </header>
-    <main>
-      <h2>Informações</h2>
-      <p>
-        Consulte abaixo os principais dados geográficos e demográficos relativos
-        à cidade de Alverca do Ribatejo, bem como algumas curiosidades
-        históricas sobre a região.
-      </p>
+    <main class="infogrid">
+      <div class="info-intro">
+        <h2>Informações</h2>
+        <p>
+          Consulte abaixo os principais dados geográficos e demográficos
+          relativos à cidade de Alverca do Ribatejo, bem como algumas
+          curiosidades históricas sobre a região.
+        </p>
+      </div>
 
-      <table>
+      <img
+        class="info-foto1"
+        src="images/azulejo.jpg"
+        alt="Painel de azulejos: Alverca em 1970, igreja e coreto"
+      />
+
+      <table class="info-tabela">
         <tr>
           <td rowspan="2">Demografia</td>
           <th>População</th>
@@ -54,6 +62,19 @@
         </tr>
       </table>
 
+      <img
+        class="info-foto2"
+        src="images/aerodromo.jpg"
+        alt="Vista aérea do aeródromo de Alverca junto ao Tejo"
+      />
+
+      <img
+        class="info-foto3"
+        src="images/aviao_1983.jpg"
+        alt="Avião estacionado em Alverca em 1983"
+      />
+
+      <div class="info-curios">
       <h3>5 Curiosidades sobre Alverca do Ribatejo</h3>
       <ul>
         <li>
@@ -86,6 +107,26 @@
           renome internacional.
         </li>
       </ul>
+      </div>
+
+      <p class="info-creditos">
+        Fotografias (Wikimedia Commons):
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Alverca_do_Ribatejo_-_Portugal_(4164466588).jpg"
+          target="_blank"
+          >Vitor Oliveira</a
+        >, CC BY-SA 2.0;
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Alverca_Airport_-_April_2019.jpg"
+          target="_blank"
+          >Rehman Abubakr</a
+        >, CC BY-SA 4.0;
+        <a
+          href="https://commons.wikimedia.org/wiki/File:6706_30-3-83_Alverca_(53010685625).jpg"
+          target="_blank"
+          >Pete Macklin</a
+        >, CC BY 2.0.
+      </p>
     </main>
     <footer>
       <p>Portugal 2026</p>

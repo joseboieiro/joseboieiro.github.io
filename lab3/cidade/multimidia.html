@@ -10,23 +10,38 @@
     <header>
       <h1>Alverca</h1>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="local.html">Localização</a>
-        <a href="multimidia.html">Multimédia</a>
-        <a href="info.html">Informação</a>
+        <a href="index.html"><span class="icone">🏠</span> Home</a>
+        <a href="local.html"><span class="icone">📍</span> Localização</a>
+        <a href="multimidia.html" class="ativo"><span class="icone">🎬</span> Multimédia</a>
+        <a href="info.html"><span class="icone">📋</span> Informação</a>
       </nav>
     </header>
-    <main>
-      <h2>Multimedia</h2>
-      <p>
-        <a href="#fotografias">Fotografias</a>
-        <a href="#video">Vídeo</a>
-        <a href="#poema">Poema</a>
-      </p>
-      <p>Nesta página encontra conteúdos multimédia.</p>
+    <main class="multimain">
+      <div class="intro">
+        <h2>Multimedia</h2>
+        <p>
+          <a href="#fotografias">Fotografias</a>
+          <a href="#video">Vídeo</a>
+          <a href="#poema">Poema</a>
+        </p>
+        <p>Nesta página encontra conteúdos multimédia.</p>
+      </div>
 
-      <section>
-        <h3 id="fotografias">Fotografias</h3>
+      <section class="destaque">
+        <img src="images/alverca.jpg" alt="Vista panorâmica de Alverca" />
+        <p>Alverca, berço da aviação em Portugal</p>
+        <small>
+          Fotografia:
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Alverca_-_Portugal_(50159921673).jpg"
+            target="_blank"
+            >Vitor Oliveira</a
+          >, CC BY-SA 2.0
+        </small>
+      </section>
+
+      <section class="ecra" id="fotografias">
+        <h3>Fotografias</h3>
 
         <div class="fotografias">
           <img src="images/jardim.jpeg" alt="jardim" />
@@ -52,8 +67,20 @@
           <img src="images/25_abril.jpg" alt="25 abril" />
         </div>
       </section>
-      <section>
-        <h3 id="video">Vídeo</h3>
+      <section class="parallax">
+        <p>O aeródromo de Alverca, entre a cidade e o Tejo</p>
+        <small>
+          Fotografia:
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Alverca_Airport_-_April_2019.jpg"
+            target="_blank"
+            >Rehman Abubakr</a
+          >, CC BY-SA 4.0
+        </small>
+      </section>
+
+      <section class="ecra" id="video">
+        <h3>Vídeo</h3>
         <iframe
           width="560"
           height="315"
@@ -73,8 +100,25 @@
           allowfullscreen
         ></iframe>
       </section>
-      <section>
-        <h3 id="poema">Poesia</h3>
+      <section class="videofundo">
+        <video autoplay muted loop playsinline>
+          <source src="videos/tejo.webm" type="video/webm" />
+        </video>
+        <div class="videofundo-texto">
+          <p>O Tejo, o rio que banha Alverca</p>
+          <small>
+            Vídeo:
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Lisbon_ferry_Bel%C3%A9m_%E2%80%93_Trafaria_%E2%80%93_view_of_southern_bank_of_Tejo.webm"
+              target="_blank"
+              >Ijon</a
+            >, CC BY-SA 4.0
+          </small>
+        </div>
+      </section>
+
+      <section class="ecra" id="poema">
+        <h3>Poesia</h3>
 
         <div class="poema-alverca">
           <p>Às margens do Tejo, onde o rio se espalha,</p>

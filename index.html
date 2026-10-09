@@ -2,38 +2,69 @@
 <html lang="pt">
   <head>
     <meta charset="utf-8" />
-    <title>Primeira Página</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>José Boieiro | DIW</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Primeira Página Web!</h1>
-    </header>
     <main>
       <section id="inicio">
-        <p>Hero Page</p>
         <nav>
           <ul>
-            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#inicio">Início</a></li>
             <li><a href="#projetos">Projetos</a></li>
             <li><a href="#cadeira">Interfaces Web</a></li>
+            <li><a href="tutoriais.html">Tutoriais</a></li>
           </ul>
         </nav>
+        <div class="hero-texto">
+          <h1>Construir a Web, uma página de cada vez.</h1>
+          <p>José Boieiro · Desenvolvimento de Interfaces Web</p>
+          <a class="botao" href="#projetos">Ver projetos</a>
+        </div>
       </section>
 
       <section id="projetos">
-        <nav>
-          <ul>
-            <li><a href="lab1/cidade/index.html">Lab1</a></li>
-
-            <li><a href="lab2/cidade/index.html">Lab2</a></li>
-
-            <li><a href="lab3/cidade/index.html">Lab3</a></li>
-          </ul>
-        </nav>
+        <h2>Projetos</h2>
+        <div class="cards">
+          <a class="card" href="lab1/cidade/index.html">
+            <h3>Lab 1</h3>
+            <p>Site da cidade em HTML: estrutura, links e multimédia.</p>
+          </a>
+          <a class="card" href="lab2/cidade/index.html">
+            <h3>Lab 2</h3>
+            <p>Site da cidade com estilos CSS.</p>
+          </a>
+          <a class="card" href="lab3/cidade/index.html">
+            <h3>Lab 3</h3>
+            <p>Site da cidade responsivo, com flexbox e media queries.</p>
+          </a>
+          <a class="card" href="lab4/index.html">
+            <h3>Lab 4</h3>
+            <p>JavaScript: página com eventos.</p>
+          </a>
+        </div>
       </section>
+
       <section id="cadeira">
-        <p>diw 🎉</p>
+        <div class="cadeira-texto">
+          <h2>Interfaces Web</h2>
+          <p>
+            Na Unidade Curricular de
+            <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232">
+              Desenvolvimento de Interfaces Web
+            </a>
+            abordaremos as seguintes tecnologias Web &#127760;:
+          </p>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React e Next.js</li>
+          </ul>
+          <p>Iremos criar soluções criativas!</p>
+        </div>
+        <img src="Images/diw.svg" alt="Desenvolvimento de Interfaces Web" />
       </section>
     </main>
     <footer>
