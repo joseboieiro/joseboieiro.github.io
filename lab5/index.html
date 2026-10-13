@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 4 | Eventos</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="titulo">Laboratório de Eventos</h1>
+      <p>Uma página que reage ao teu rato. Experimenta tudo!</p>
+      <button onclick="mudarTema()">Mudar tema</button>
+    </header>
+
+    <main>
+      <section>
+        <h2>Contador</h2>
+        <p>Clica nos botões para mudar o valor.</p>
+        <p id="contador">0</p>
+        <div class="botoes">
+          <button onclick="decrementar()">− 1</button>
+          <button onclick="reiniciar()">Reiniciar</button>
+          <button onclick="incrementar()">+ 1</button>
+        </div>
+        <p id="mensagem">Ainda não clicaste em nada.</p>
+      </section>
+
+      <section>
+        <h2>Fotografia</h2>
+        <p id="legenda">Passa o rato por cima da fotografia.</p>
+        <img
+          id="fotografia"
+          src="images/fotografia.png"
+          alt="Cidade futurista"
+          onmouseover="destacarFoto()"
+          onmouseout="reporFoto()"
+          ondblclick="rodarFoto()"
+        />
+      </section>
+
+      <section>
+        <h2>Pinta com o rato</h2>
+        <p>Move o rato dentro da caixa para mudar a cor.</p>
+        <div id="caixa" onmousemove="pintar(event)">
+          <p id="coordenadas">x: 0, y: 0</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Jogo</h2>
+        <p>Tente ganhar o máximo numero de pontos possiveis.</p>
+        <div id="jogoDiv">
+          <p id="pontos"></p>
+          <button id="butaoJogo">teste</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>José Boieiro · DIW 2026</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
