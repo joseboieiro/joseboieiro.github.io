@@ -1,22 +1,27 @@
+/* As funções abaixo são chamadas pelos atributos de evento do index.html
+   (onclick, ondblclick, onmouseover, onmouseout, onmousemove), por isso o
+   ESLint não as vê a ser usadas. */
+/* eslint-disable no-unused-vars */
+
 // Contador
 
 let contador = 0;
 
 function atualizarContador() {
-  const elemento = document.querySelector('#contador');
-  const mensagem = document.querySelector('#mensagem');
+  const elemento = document.querySelector("#contador");
+  const mensagem = document.querySelector("#mensagem");
 
   elemento.textContent = contador;
 
   if (contador > 0) {
-    elemento.style.color = 'green';
-    mensagem.textContent = 'O contador está positivo.';
+    elemento.style.color = "green";
+    mensagem.textContent = "O contador está positivo.";
   } else if (contador < 0) {
-    elemento.style.color = 'red';
-    mensagem.textContent = 'O contador está negativo.';
+    elemento.style.color = "red";
+    mensagem.textContent = "O contador está negativo.";
   } else {
-    elemento.style.color = 'inherit';
-    mensagem.textContent = 'O contador está a zero.';
+    elemento.style.color = "inherit";
+    mensagem.textContent = "O contador está a zero.";
   }
 }
 
@@ -40,37 +45,37 @@ function reiniciar() {
 let rotacao = 0;
 
 function destacarFoto() {
-  const foto = document.querySelector('#fotografia');
-  const legenda = document.querySelector('#legenda');
+  const foto = document.querySelector("#fotografia");
+  const legenda = document.querySelector("#legenda");
 
-  foto.style.filter = 'none';
-  foto.style.transform = 'scale(1.05) rotate(' + rotacao + 'deg)';
-  legenda.textContent = 'Agora faz duplo clique para rodar a fotografia.';
+  foto.style.filter = "none";
+  foto.style.transform = "scale(1.05) rotate(" + rotacao + "deg)";
+  legenda.textContent = "Agora faz duplo clique para rodar a fotografia.";
 }
 
 function reporFoto() {
-  const foto = document.querySelector('#fotografia');
-  const legenda = document.querySelector('#legenda');
+  const foto = document.querySelector("#fotografia");
+  const legenda = document.querySelector("#legenda");
 
-  foto.style.filter = 'grayscale(100%)';
-  foto.style.transform = 'scale(1) rotate(' + rotacao + 'deg)';
-  legenda.textContent = 'Passa o rato por cima da fotografia.';
+  foto.style.filter = "grayscale(100%)";
+  foto.style.transform = "scale(1) rotate(" + rotacao + "deg)";
+  legenda.textContent = "Passa o rato por cima da fotografia.";
 }
 
 function rodarFoto() {
-  const foto = document.querySelector('#fotografia');
-  const legenda = document.querySelector('#legenda');
+  const foto = document.querySelector("#fotografia");
+  const legenda = document.querySelector("#legenda");
 
   rotacao = rotacao + 180;
-  foto.style.transform = 'scale(1.05) rotate(' + rotacao + 'deg)';
-  legenda.textContent = 'Fotografia rodada ' + rotacao + ' graus.';
+  foto.style.transform = "scale(1.05) rotate(" + rotacao + "deg)";
+  legenda.textContent = "Fotografia rodada " + rotacao + " graus.";
 }
 
 // Caixa que muda de cor com a posição do rato
 
 function pintar(evento) {
-  const caixa = document.querySelector('#caixa');
-  const coordenadas = document.querySelector('#coordenadas');
+  const caixa = document.querySelector("#caixa");
+  const coordenadas = document.querySelector("#coordenadas");
 
   const x = evento.offsetX;
   const y = evento.offsetY;
@@ -79,8 +84,8 @@ function pintar(evento) {
   const cor = Math.round((x / caixa.clientWidth) * 360);
   const luz = Math.round(30 + (y / caixa.clientHeight) * 50);
 
-  caixa.style.backgroundColor = 'hsl(' + cor + ', 80%, ' + luz + '%)';
-  coordenadas.textContent = 'x: ' + x + ', y: ' + y;
+  caixa.style.backgroundColor = "hsl(" + cor + ", 80%, " + luz + "%)";
+  coordenadas.textContent = "x: " + x + ", y: " + y;
 }
 
 // Tema claro / escuro
@@ -88,24 +93,24 @@ function pintar(evento) {
 let temaEscuro = false;
 
 function mudarTema() {
-  const titulo = document.querySelector('#titulo');
+  const titulo = document.querySelector("#titulo");
 
   temaEscuro = !temaEscuro;
 
   if (temaEscuro) {
-    document.body.style.backgroundColor = '#14243b';
-    document.body.style.color = 'white';
-    titulo.textContent = 'Laboratório de Eventos 🌙';
+    document.body.style.backgroundColor = "#14243b";
+    document.body.style.color = "white";
+    titulo.textContent = "Laboratório de Eventos 🌙";
   } else {
-    document.body.style.backgroundColor = '#eef2f6';
-    document.body.style.color = 'black';
-    titulo.textContent = 'Laboratório de Eventos ☀️';
+    document.body.style.backgroundColor = "#eef2f6";
+    document.body.style.color = "black";
+    titulo.textContent = "Laboratório de Eventos ☀️";
   }
 }
 
 // 1. Selecionar os elementos do DOM
-const btn = document.getElementById("butaoJogo");
-const jogoDiv = document.getElementById("jogoDiv");
+const btn = document.getElementById("butao-jogo");
+const jogoDiv = document.getElementById("jogo-div");
 const pontosEl = document.getElementById("pontos");
 
 // 2. Criar variáveis de estado do jogo

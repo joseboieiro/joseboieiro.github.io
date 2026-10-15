@@ -19,8 +19,8 @@ section {
 #inicio {
   position: relative;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url('Images/backfoto.jpg');
+    linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)),
+    url("Images/backfoto.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -100,6 +100,10 @@ nav a:hover {
   color: white;
 }
 
+.cadeira-texto h2 {
+  margin-bottom: 1rem;
+}
+
 #projetos h2,
 #cadeira h2 {
   font-size: 2rem;
@@ -119,13 +123,15 @@ nav a:hover {
   padding: 25px;
   border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 40%);
 }
 
 .card h3 {
@@ -147,10 +153,6 @@ nav a:hover {
 
 .cadeira-texto {
   max-width: 450px;
-}
-
-.cadeira-texto h2 {
-  margin-bottom: 1rem;
 }
 
 .cadeira-texto ul {
@@ -220,7 +222,7 @@ nav a:hover {
   padding: 20px;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
 }
 
 .pen iframe {
@@ -239,7 +241,7 @@ footer {
   color: white;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .hero-texto h1 {
     font-size: 3.5rem;
   }

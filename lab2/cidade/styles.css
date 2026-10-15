@@ -1,34 +1,43 @@
 body {
-    background-color: #f4f4f4;
+  background-color: #f4f4f4;
 }
 
 footer {
-    background-color: #333333;
+  background-color: #333;
 }
+
 main {
-    background-color: white;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 1000px;
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1000px;
 }
-header{
-    background-color: blue;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 1000px;
+
+header {
+  background-color: blue;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1000px;
 }
-header h1{
-    color: white;
-    text-align: center;
+
+header h1 {
+  color: white;
+  text-align: center;
 }
-header nav{
-    background-color: red;
-    width: 100%;
-    color: white;
-    text-align: center;
-    word-spacing: 30px;
+
+header nav {
+  background-color: red;
+  width: 100%;
+  color: white;
+  text-align: center;
+  word-spacing: 30px;
 }
-header a{
-    border: 1px solid black;
-    color: white;
+
+header a {
+  border: 1px solid black;
+  color: white;
+}
+
+iframe {
+  border: 0;
 }

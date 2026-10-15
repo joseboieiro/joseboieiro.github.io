@@ -1,20 +1,22 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: arial;
+  font-family: arial, sans-serif;
 }
 
 body {
-    background-color: #f4f4f4;
+  background-color: #f4f4f4;
 }
+
 footer {
-    background-color: #333333;
+  background-color: #333;
 }
+
 main {
-    background-color: white;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 1000px;
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1000px;
 }
 
 header {
@@ -22,11 +24,9 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-
   padding: 10px;
   background: whitesmoke;
 }
-
 
 nav {
   display: flex;
@@ -54,18 +54,25 @@ a:hover {
   filter: brightness(90%);
 }
 
-img, iframe {
+img,
+iframe {
   max-width: 100%;
 }
 
+iframe {
+  border: 0;
+}
+
 /* No telemóvel o menu passa a ser uma barra fixa no fundo do ecrã */
-@media (max-width: 600px) {
+@media (width <= 600px) {
   header {
     justify-content: center;
   }
+
   body {
     padding-bottom: 70px;
   }
+
   nav {
     position: fixed;
     bottom: 0;
@@ -75,6 +82,7 @@ img, iframe {
     background: white;
     box-shadow: 0 -2px 6px lightgrey;
   }
+
   nav a {
     flex: 1;
     flex-direction: column;
@@ -84,10 +92,12 @@ img, iframe {
     border-radius: 0;
     box-shadow: none;
   }
+
   .icone {
     font-size: 1.4rem;
   }
 }
+
 /* Página multimédia */
 
 .multimain {
@@ -166,8 +176,7 @@ img, iframe {
   align-items: center;
   gap: 10px;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url('images/tejo.jpg');
+    linear-gradient(rgb(0 0 0 / 35%), rgb(0 0 0 / 35%)), url("images/tejo.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -219,22 +228,24 @@ img, iframe {
 }
 
 .fotografias {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-      }
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 .fotografias img {
   width: 150px;
   border-radius: 20px;
   transition: width 2s;
 }
+
 .fotografias img:hover {
   width: 300px;
 }
+
 /* Página localização: texto por cima do mapa no telemóvel, lado a lado no PC */
-.localmain{
+.localmain {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -246,15 +257,18 @@ img, iframe {
   width: 100%;
 }
 
-@media (min-width: 600px) {
-  .localmain{
+@media (width >= 600px) {
+  .localmain {
     flex-direction: row;
     align-items: flex-start;
   }
-  .localmain p, .localmain iframe {
+
+  .localmain p,
+  .localmain iframe {
     flex: 1;
   }
 }
+
 /* Página informações: no telemóvel uma coluna, no PC uma grelha de 4 colunas.
    Cada "." no grid-template-areas é uma posição vazia. */
 .infogrid {
@@ -271,23 +285,43 @@ img, iframe {
     "creditos";
 }
 
-.info-intro    { grid-area: intro; }
-.info-tabela   { grid-area: tabela; }
-.info-curios   { grid-area: curios; }
-.info-foto1    { grid-area: foto1; }
-.info-foto2    { grid-area: foto2; }
-.info-foto3    { grid-area: foto3; }
-.info-creditos { grid-area: creditos; font-size: 0.8rem; }
+.info-intro {
+  grid-area: intro;
+}
 
-.infogrid img {
+.info-tabela {
+  grid-area: tabela;
+  width: 100%;
+}
+
+.info-curios {
+  grid-area: curios;
+}
+
+.info-foto1 {
+  grid-area: foto1;
+}
+
+.info-foto2 {
+  grid-area: foto2;
+}
+
+.info-foto3 {
+  grid-area: foto3;
+}
+
+.info-creditos {
+  grid-area: creditos;
+  font-size: 0.8rem;
+}
+
+.info-foto1,
+.info-foto2,
+.info-foto3 {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-}
-
-.info-tabela {
-  width: 100%;
 }
 
 .info-curios ul {
@@ -298,7 +332,7 @@ img, iframe {
   margin-top: 10px;
 }
 
-@media (min-width: 800px) {
+@media (width >= 800px) {
   .infogrid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
@@ -308,6 +342,7 @@ img, iframe {
       ".        foto3    curios   curios"
       "creditos creditos creditos creditos";
   }
+
   .infogrid .info-foto1 {
     height: 260px;
     align-self: center;
@@ -315,17 +350,19 @@ img, iframe {
 }
 
 th {
-        color: #1a365d; /* Azul escuro para os cabeçalhos */
-        background-color: #edf2f7;
-        padding: 8px;
-      }
-      td {
-        color: #2d3748; /* Cinzento escuro para o texto */
-        padding: 8px;
-      }
-      table,
-      th,
-      td {
-        border: 1px solid #cbd5e0;
-        border-collapse: collapse;
-      }
+  color: #1a365d; /* Azul escuro para os cabeçalhos */
+  background-color: #edf2f7;
+  padding: 8px;
+}
+
+td {
+  color: #2d3748; /* Cinzento escuro para o texto */
+  padding: 8px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #cbd5e0;
+  border-collapse: collapse;
+}
