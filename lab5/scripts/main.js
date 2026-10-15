@@ -111,32 +111,71 @@ const pontosEl = document.getElementById("pontos");
 // 2. Criar variáveis de estado do jogo
 let pontos = 0;
 let tempoRestante = 10; // Tempo do jogo em segundos
-let jogoAtivo = true;
+let jogoAtivo = false;
+let temporizador;
+let emContagem = false;
 
-// Mostrar a pontuação inicial
-pontosEl.innerText = `Pontos: ${pontos} | Tempo: ${tempoRestante}s`;
+// Colocar o botão no centro da área do jogo
+function centrarBotao() {
+  const x = (jogoDiv.clientWidth - btn.offsetWidth) / 2;
+  const y = (jogoDiv.clientHeight - btn.offsetHeight) / 2;
 
-// 3. Temporizador (contador decrescente de 1 segundo)
-const temporizador = setInterval(() => {
-  tempoRestante--;
-  
-  if (tempoRestante > 0) {
-    pontosEl.innerText = `Pontos: ${pontos} | Tempo: ${tempoRestante}s`;
-  } else {
-    // Quando o tempo acaba
-    clearInterval(temporizador);
-    jogoAtivo = false;
-    btn.disabled = true; // Desativa o botão
-    pontosEl.innerText = `Fim do Jogo! Pontuação final: ${pontos} pontos.`;
-  }
-}, 1000);
+  btn.style.left = `${x}px`;
+  btn.style.top = `${y}px`;
+}
 
-// 4. Evento de clique no botão
+centrarBotao();
+
+// Contagem decrescente 3, 2, 1 antes de o jogo começar
+function contagemDecrescente() {
+  let segundos = 3;
+  emContagem = true;
+  btn.textContent = segundos;
+  centrarBotao();
+  btn.style.alignSelf = "center";
+  const intervaloContagem = setInterval(() => {
+    segundos--;
+
+    if (segundos > 0) {
+      btn.textContent = segundos;
+      centrarBotao();
+    } else {
+      // A contagem chegou ao fim: parar este intervalo e só agora começar o jogo
+      clearInterval(intervaloContagem);
+      emContagem = false;
+      iniciarJogo();
+    }
+  }, 1000);
+}
+
+// 3. Começar (ou recomeçar) o jogo
+function iniciarJogo() {
+  pontos = 0;
+  tempoRestante = 10;
+  jogoAtivo = true;
+  btn.textContent = "Game On";
+  centrarBotao();
+  pontosEl.innerText = `Pontos: ${pontos} | Tempo: ${tempoRestante}s`;
+
+  // Temporizador novo em cada jogo (contador decrescente de 1 segundo)
+  temporizador = setInterval(() => {
+    tempoRestante--;
+
+    if (tempoRestante > 0) {
+      pontosEl.innerText = `Pontos: ${pontos} | Tempo: ${tempoRestante}s`;
+    } else {
+      // Quando o tempo acaba
+      clearInterval(temporizador);
+      jogoAtivo = false;
+      btn.textContent = "Reiniciar";
+      pontosEl.innerText = `Fim do Jogo! Pontuação final: ${pontos} pontos.`;
+    }
+  }, 1000);
+}
+
+// 4. Passar o rato por cima do botão: ganha um ponto e o botão foge
 btn.addEventListener("mouseover", () => {
-  if (!jogoAtivo) {
-    btn.textContent = "Reiniciar"
-    return;
-  }
+  if (!jogoAtivo) return;
 
   // Incrementar pontos
   pontos++;
@@ -155,12 +194,8 @@ btn.addEventListener("mouseover", () => {
   btn.style.top = `${randomY}px`;
 });
 
-// 5. Evento de clique no botão
+// 5. Clicar no botão depois do fim: recomeça o jogo
 btn.addEventListener("click", () => {
-  console.log("aqui");
-  if (jogoAtivo) return;
-  jogoAtivo = true;
-  pontos = 0;
-  tempoRestante = 10;
-  btn.textContent = "Game On"
+  if (jogoAtivo || emContagem) return;
+  contagemDecrescente();
 });
