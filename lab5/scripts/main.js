@@ -3,14 +3,25 @@
    ESLint não as vê a ser usadas. */
 /* eslint-disable no-unused-vars */
 
-// Contador
+// Contador (o valor fica guardado no Local Storage)
 
-let contador = 0;
+// a. Variáveis
+
+// Se não existe a chave contador em localStorage, inicializamos.
+if (!localStorage.getItem("contador")) {
+  localStorage.setItem("contador", 0);
+}
+
+// O localStorage só guarda texto, por isso convertemos para número
+let contador = Number(localStorage.getItem("contador"));
+
+const elemento = document.querySelector("#contador");
+const mensagem = document.querySelector("#mensagem");
+
+// b. Event handlers
 
 function atualizarContador() {
-  const elemento = document.querySelector("#contador");
-  const mensagem = document.querySelector("#mensagem");
-
+  localStorage.setItem("contador", contador);
   elemento.textContent = contador;
 
   if (contador > 0) {
@@ -39,6 +50,15 @@ function reiniciar() {
   contador = 0;
   atualizarContador();
 }
+
+// c. Event listeners
+
+document.querySelector("#decrementar").addEventListener("click", decrementar);
+document.querySelector("#reiniciar").addEventListener("click", reiniciar);
+document.querySelector("#incrementar").addEventListener("click", incrementar);
+
+// Quando a página carrega, mostrar o valor que estava guardado
+atualizarContador();
 
 // Fotografia
 
@@ -204,3 +224,32 @@ btn.addEventListener("click", () => {
   if (jogoAtivo || emContagem) return;
   contagemDecrescente();
 });
+
+// Pinta-me: um só listener para todos os botões, a cor vem do data-color
+const pintaMe = document.querySelector("#pinta-me");
+const frasePinta = document.querySelector("#frase-pinta");
+
+document.querySelectorAll("button.color").forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const cor = botao.dataset.color;
+
+    pintaMe.style.backgroundColor = cor;
+    frasePinta.textContent = "Agora estou pintada de " + botao.textContent + "!";
+  });
+});
+
+// Escolha uma cor: o this é o próprio <select> que disparou o evento.
+// Tem de ser function e não arrow function, porque a arrow não tem this próprio.
+document.querySelector("#cor-pagina").addEventListener("change", function () {
+  document.querySelector("body").style.backgroundColor = this.value;
+});
+
+// Formulário: mostrar a saudação sem recarregar a página
+document.querySelector("#form-saudacao").onsubmit = (e) => {
+  e.preventDefault(); // para não recarregar a página
+
+  const nome = document.querySelector("#nome").value;
+  const idade = document.querySelector("#idade").value;
+
+  document.querySelector("#saudacao").textContent = `Olá, o ${nome} tem ${idade}!`;
+};

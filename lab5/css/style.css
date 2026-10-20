@@ -66,6 +66,19 @@ button:hover {
   gap: 10px;
 }
 
+#form-saudacao {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* o <menu> é uma lista: tirar as bolinhas e o recuo por defeito */
+menu.botoes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 #contador {
   font-size: 4rem;
   font-weight: bold;
