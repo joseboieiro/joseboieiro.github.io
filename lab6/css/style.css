@@ -1,0 +1,17 @@
+main{
+    background-color: aqua;
+    margin: auto;
+    padding: 10%;
+    border-radius: 10px;
+}
+
+section{
+    border: 1px solid grey;
+    padding: 10px;
+    margin: auto;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
