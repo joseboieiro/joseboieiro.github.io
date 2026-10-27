@@ -4,22 +4,24 @@
 
 body {
     margin: 0;
-    background-color: purple;
-    color: white;
+    background-color: #f4f4f4;
+    color: black;
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* Cabeçalho: título à esquerda, menu à direita */
+/* Cabeçalho: barra roxa, título à esquerda, menu à direita */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
+    background-color: purple;
+    color: white;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.6em;
+    font-size: 1.8em;
 }
 
 nav ul {
@@ -40,36 +42,76 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Grelha de cartões */
+/* Secções: fundo a toda a largura, conteúdo centrado em grelha */
 #produtos,
+#cesto {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 40px max(20px, calc((100% - 760px) / 2));
+}
+
+/* Título da secção ocupa a linha inteira */
+#produtos > h1,
+#cesto > h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.4em;
+    margin: 0;
+}
+
+#produtos > br,
+#cesto > br {
+    display: none;
+}
+
+/* Cesto com fundo roxo; em flex para a última linha de cartões ficar centrada */
 #cesto {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+    gap: 35px;
+    background-color: purple;
+    color: white;
+}
+
+#cesto > h1 {
+    width: 100%;
+}
+
+/* Preço do cesto ocupa a linha inteira, por baixo dos cartões */
+#preco {
+    width: 100%;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0;
 }
 
 /* Cartão de cada produto */
 #produtos > section,
 #cesto > section {
-    width: 350px;
     background-color: white;
     color: black;
-    border-radius: 6px;
-    padding: 10px;
+    padding: 20px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
 }
 
-#produtos > section p:first-child,
-#cesto > section p:first-child {
-    font-weight: bold;
-    margin: 5px 0 10px;
+/* Cartões do cesto: largura fixa */
+#cesto > section {
+    width: 210px;
+    padding: 15px;
+}
+
+#produtos > section h1,
+#cesto > section h1 {
+    font-size: 1.1em;
+    margin: 0 0 15px;
 }
 
 #produtos img,
@@ -80,23 +122,34 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+/* Preço do produto (primeiro p do cartão), texto simples */
 #produtos > section p,
 #cesto > section p {
-    font-size: 0.9em;
-    margin: 5px 0;
+    font-size: 0.95em;
+    margin: 15px 0 10px;
 }
 
+/* Descrição (segundo p do cartão da loja) em itálico numa caixa cinzenta */
+#produtos > section p + p {
+    background-color: #f2f2f2;
+    font-size: 0.75em;
+    font-style: italic;
+    line-height: 1.4;
+    text-align: left;
+    padding: 8px 10px;
+    margin: 0 0 25px;
+}
+
+/* Botão sempre no fundo do cartão */
 #produtos button,
 #cesto button {
+    margin-top: auto;
     font-size: 0.8em;
     padding: 2px 8px;
     cursor: pointer;
 }
 
-/* Custo total no fundo */
 footer {
     text-align: center;
-    font-weight: bold;
-    font-size: 1.2em;
     padding: 20px;
 }
