@@ -234,7 +234,8 @@ document.querySelectorAll("button.color").forEach((botao) => {
     const cor = botao.dataset.color;
 
     pintaMe.style.backgroundColor = cor;
-    frasePinta.textContent = "Agora estou pintada de " + botao.textContent + "!";
+    frasePinta.textContent =
+      "Agora estou pintada de " + botao.textContent + "!";
   });
 });
 
@@ -251,5 +252,6 @@ document.querySelector("#form-saudacao").onsubmit = (e) => {
   const nome = document.querySelector("#nome").value;
   const idade = document.querySelector("#idade").value;
 
-  document.querySelector("#saudacao").textContent = `Olá, o ${nome} tem ${idade}!`;
+  document.querySelector("#saudacao").textContent =
+    `Olá, o ${nome} tem ${idade}!`;
 };
