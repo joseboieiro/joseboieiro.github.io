@@ -186,6 +186,64 @@ nav a:hover {
   cursor: pointer;
 }
 
+#checkout {
+  width: min(760px, 100% - 40px);
+  margin: 40px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 10px;
+  background-color: rgb(255 255 255 / 90%);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgb(0 0 0 / 5%);
+}
+
+#checkout > h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 1.4em;
+  margin: 0 0 10px;
+}
+
+#checkout label {
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+#checkout label:first-of-type {
+  margin-left: 0;
+}
+
+#checkout input[type="text"] {
+  font-size: 0.85em;
+  padding: 3px 5px;
+  width: 200px;
+}
+
+#checkout button {
+  margin-left: 20px;
+  font-size: 0.8em;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+#checkout p {
+  width: 100%;
+  text-align: center;
+  margin: 5px 0 0;
+}
+
+#checkout p:empty {
+  display: none;
+}
+
+#valor-final {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 footer {
   text-align: center;
   padding: 20px;

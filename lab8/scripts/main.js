@@ -6,6 +6,10 @@ const preco_lbl = document.querySelector("#preco");
 const filtro_cat = document.querySelector("#filtro-categoria");
 const filtro_ordem = document.querySelector("#ordenar");
 const filtro_nome = document.querySelector("#procurar");
+//Check Out
+const cupao = document.querySelector("#cupao");
+const estudante = document.querySelector("#estudante");
+const btnComprar = document.querySelector("#comprar");
 
 let carrinho = [];
 if (!localStorage.getItem("carrinho")) {
@@ -158,3 +162,38 @@ function loadCarrinho() {
 
 //Mostrar o cesto guardado ao abrir a página
 loadCarrinho();
+
+
+btnComprar.addEventListener("click", () => {
+  if (carrinho.length == 0) return;
+
+  const data = {
+    products: carrinho.map((prod) => prod.id),
+    student: estudante.checked,
+    coupon: cupao.value,
+    name: "Zé",
+  };
+
+  fetch("https://deisishop.pw.deisi.ulusofona.pt/buy", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  })
+    .then((response) =>
+      response.json().then((dados) => {
+        if (!response.ok) throw new Error(dados.error || response.status);
+        return dados;
+      })
+    )
+    .then((dados) => {
+      /*console.log(dados.totalCost);
+        console.log(dados.reference);
+        console.log(dados.message);
+       */
+      alert('Valor pago: ' + dados.totalCost + '€\nReferência: ' + dados.reference);
+      carrinho = [];
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+      loadCarrinho();
+    })
+    .catch((error) => console.error("Erro na compra:", error.message));
+});
